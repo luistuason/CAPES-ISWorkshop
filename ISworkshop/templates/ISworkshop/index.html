@@ -32,6 +32,19 @@
   <br>
   <p><a href="{% url 'profile' %}">PROFILE PAGE</a></p>
   <p><a href="{% url 'form' %}">FORM PAGE</a></p>
+
+  {% for post in posts %}
+
+				<li class="list-group-item">Email: {{post.email}}</li>
+        <li class="list-group-item">Graduation Year: {{post.graduation_year}}</li>
+        <li class="list-group-item">Date joined: {{post.date_joined}}</li>
+        <li class="list-group-item">Degree: {{post.degree}}</li>
+        <li class="list-group-item">Program: {{post.program}}</li>
+        <li class="list-group-item">Student Number: {{post.student_number}}</li>
+        <li class="list-group-item">Last login: {{post.last_login}}</li>
+
+{% endfor %}
+
   {% block sidebar %}<!-- insert default navigation text for every page -->{% endblock %}
   {% block content %}<!-- default content text (typically empty) -->{% endblock %}
 </body>

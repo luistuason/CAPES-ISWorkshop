@@ -30,6 +30,8 @@
     </div>
   </nav>
 
+  
+
   <div class="container profile">
     <div class="main-body">
       <div class="row gutters-sm">
@@ -49,6 +51,9 @@
             </div>
           </div>
         </div>
+
+        {% for post in posts %}
+
         <div class="col-md-8">
           <div class="card mb-3">
             <div class="card-body">
@@ -75,7 +80,7 @@
                   <h6 class="mb-0">Email</h6>
                 </div>
                 <div class="col-sm-9 text-secondary">
-                  luis.tuason@eee.upd.edu.ph
+                  {{post.email}}
                 </div>
               </div>
               <hr>
@@ -84,7 +89,7 @@
                   <h6 class="mb-0">Student Number</h6>
                 </div>
                 <div class="col-sm-9 text-secondary">
-                  2018-08149
+                  {{post.student_number}}
                 </div>
               </div>
               <hr>
@@ -93,7 +98,7 @@
                   <h6 class="mb-0">Degree Program</h6>
                 </div>
                 <div class="col-sm-9 text-secondary">
-                  BS Electronics Engineering
+                  {{post.degree}} {{post.program}}
                 </div>
               </div>
               <hr>
@@ -102,7 +107,7 @@
                   <h6 class="mb-0">Graduation Year</h6>
                 </div>
                 <div class="col-sm-9 text-secondary">
-                  2022
+                  {{post.graduation_year}}
                 </div>
               </div>
               <hr>
@@ -129,7 +134,7 @@
                   <h6 class="mb-0">Last Login</h6>
                 </div>
                 <div class="col-sm-9 text-secondary">
-                  insert date here
+                  {{post.last_login}}
                 </div>
               </div>
               <hr>
@@ -138,7 +143,7 @@
                   <h6 class="mb-0">Date Joined</h6>
                 </div>
                 <div class="col-sm-9 text-secondary">
-                  insert yet another date here
+                  {{post.date_joined}}
                 </div>
               </div>
               <hr>
@@ -153,6 +158,9 @@
             </div>
           </div>
         </div>
+
+        {% endfor %}
+
       </div>
     </div>
   </div>

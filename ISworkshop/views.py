@@ -1,10 +1,9 @@
 from django.shortcuts import render
+from .models import ProfilePage
 
-# Create your views here.
 def index(request):
-  context = { }
-
-  return render(request, 'ISworkshop/index.html', context=context)
+  posts = ProfilePage.objects.all()
+  return render(request, 'ISworkshop/profile.html', {'posts': posts})
 
 def profile(request):
   context = { }
