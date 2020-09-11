@@ -4,44 +4,44 @@ import datetime
 
 class ProfilePageForm(forms.ModelForm):
     email = forms.EmailField(
-        label = '', 
-        widget = forms.TextInput(attrs = {'placeholder': 'Email', 'class':'email'}), 
+        label = 'Email', 
+        widget = forms.TextInput(attrs = {'placeholder': 'Email', 'class':'email form-control'}), 
         max_length = 60
     )
 
     student_number = forms.CharField(
-        label = '', 
-        widget = forms.TextInput(attrs = {'placeholder': 'Student Number', 'class':'student_number'}), 
+        label = 'Student Number', 
+        widget = forms.TextInput(attrs = {'placeholder': 'Student Number', 'class':'student_number form-control'}), 
         max_length = 9
     )
 
     first_name = forms.CharField(
-        label = '', 
-        widget = forms.TextInput(attrs = {'placeholder': 'First Name', 'class':'first_name'}), 
+        label = 'First Name', 
+        widget = forms.TextInput(attrs = {'placeholder': 'First Name', 'class':'first_name form-control'}), 
         max_length = 60
     )
 
     last_name = forms.CharField(
-        label = '', 
-        widget = forms.TextInput(attrs = {'placeholder': 'Last Name', 'class':'last_name'}), 
+        label = 'Last Name', 
+        widget = forms.TextInput(attrs = {'placeholder': 'Last Name', 'class':'last_name form-control'}), 
         max_length = 60
     )
     graduation_year = forms.IntegerField(
         min_value = datetime.date.today().year,
         max_value = datetime.date.today().year + 10,
-        label = 'Expected year of graduation', 
-        widget = forms.NumberInput(attrs = {'class':'graduation_year'}),
+        label = 'Expected Year of Graduation', 
+        widget = forms.NumberInput(attrs = {'class':'graduation_year form-control'}),
     )
     
     degree = forms.ChoiceField(
         choices= ProfilePage.DEGREES,
         label = 'Degree',
-        widget = forms.Select(attrs = {'class':'degree'})
+        widget = forms.Select(attrs = {'class':'degree form-control'})
     )
 
     program = forms.ChoiceField(
         choices= ProfilePage.PROGRAMS,
-        widget = forms.Select(attrs = {'class':'program'})
+        widget = forms.Select(attrs = {'class':'program form-control'})
     )
     class Meta:
         model = ProfilePage

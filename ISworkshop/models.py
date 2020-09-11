@@ -20,7 +20,7 @@ class ProfilePage(models.Model):
 			verbose_name="date joined", auto_now_add=True)
     last_login = models.DateTimeField(
 			verbose_name="last login", auto_now=True)
-    DEGREES = Choices("Bachelor of Arts", "Bachelor of Laws", "Bachelor of Science", "Certificate", "Diploma", "Doctor of Enginerring", "Doctor of Science", "Doctor of Philosophy", "Juris Doctor",
+    DEGREES = Choices("Bachelor of Arts", "Bachelor of Laws", "Bachelor of Science", "Certificate", "Diploma", "Doctor of Engineering", "Doctor of Science", "Doctor of Philosophy", "Juris Doctor",
                       "Master of Arts", "Master of Engineering", "Master of Science", "Professional Masters")
     degree = models.CharField(
 			max_length=60, choices=DEGREES, default=DEGREES.Diploma)
